@@ -1,29 +1,27 @@
-const http = require('http');
-
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-/**
- * @argument function executes for every req
- */
-app.use(
-  /**
-   * @argument req request
-   * @argument res response
-   * @argument next function
-   */
-  (req, res, next) => {
-    console.log('In the middleware');
-    next();
-  }
-);
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use((req, res, next) => {
-  console.log('In another middleware');
+/**
+ * use:
+ *  @param path : any path that start with '/add-product'
+ */
+app.use('/add-product', (req, res, next) => {
+  res.send(
+    '<form action="/product" method="POST"><input type="text" name="title"><button type="submit">Add Product</button></form>'
+  );
+});
+
+app.use('/product', (req, res) => {
+  console.log(req.body);
+  res.redirect('/');
+});
+
+app.use('/', (req, res, next) => {
   res.send('<h>Hello from Express JS</h>');
 });
 
-const server = http.createServer(app);
-
-server.listen(3000);
+app.listen(3000);
