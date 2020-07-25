@@ -34,6 +34,7 @@ const requestHandler = (req, res) => {
       return res.end();
     });
   }
+
   res.setHeader('Content-type', 'text/html');
   res.write('<html>');
   res.write('<head>');
