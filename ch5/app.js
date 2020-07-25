@@ -15,7 +15,8 @@ app.use('/add-product', (req, res, next) => {
   );
 });
 
-app.use('/product', (req, res) => {
+// will only fire for post request
+app.post('/product', (req, res) => {
   console.log(req.body);
   res.redirect('/');
 });
