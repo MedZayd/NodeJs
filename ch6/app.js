@@ -4,13 +4,9 @@ const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const path = require('path');
 const rootDir = require('./util/path');
-const expressHbs = require('express-handlebars');
-
 const app = express();
 
-app.engine('.hbs', expressHbs({ extname: '.hbs' }));
-app.set('view engine', '.hbs');
-app.set('views', 'views');
+app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(rootDir, 'public')));
