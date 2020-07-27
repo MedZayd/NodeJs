@@ -40,3 +40,22 @@ exports.getCheckout = (_, res) => {
 		path: '/checkout',
 	});
 };
+
+exports.getProduct = (req, res) => {
+	const {
+		params: { productId },
+	} = req;
+
+	Product.fetchById(productId, (product) => {
+		console.log(product);
+		if (product) {
+			res.render('shop/product-detail', {
+				product,
+				pageTitle: 'Product detail',
+				path: '/products',
+			});
+		} else {
+			res.redirect('/404');
+		}
+	});
+};

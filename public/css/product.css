@@ -1,0 +1,43 @@
+.container {
+	width: 800px;
+	margin: 20px auto;
+	background-color: white;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+	border-radius: 5px;
+}
+
+.product__item {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.product__detail {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 1;
+}
+
+.product__header,
+.product__content,
+.product__image,
+.product__actions,
+.product__price {
+	margin: 1rem;
+}
+
+.product__content {
+	flex: 1;
+}
+
+.product__image {
+	width: 20%;
+}
+
+.product__image img {
+	width: 100%;
+}
+
+.product__actions {
+	display: flex;
+}
