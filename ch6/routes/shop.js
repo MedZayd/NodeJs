@@ -7,7 +7,13 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
 	const { products } = adminData;
-	res.render('shop', { products, pageTitle: 'My Shopify', path: '/' });
+	res.render('shop', {
+		products,
+		pageTitle: 'My Shopify',
+		path: '/',
+		hasProducts: products.length > 0,
+		activeShop: true,
+	});
 });
 
 module.exports = router;
