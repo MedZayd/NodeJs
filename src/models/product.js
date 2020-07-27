@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const p = path.join(__dirname, '..', 'data', 'products.json');
+const { v1: uuidv1 } = require('uuid');
 
 const getProductsFromFile = (callback) => {
 	fs.readFile(p, (err, data) => {
@@ -21,6 +22,7 @@ module.exports = class Product {
 	}
 
 	save() {
+		this.id = uuidv1().toString();
 		getProductsFromFile((products) => {
 			products.push(this);
 			fs.writeFile(p, JSON.stringify(products), () => {});

@@ -14,8 +14,12 @@ block main
 					img(src=product.image, alt="image from placeimg.com")
 				.card__content
 					h2.product__price $#{product.price}
-					p.product_description #{product.description}
+					if product.description.length > 150
+						p.product_description #{product.description.substring(0,150)+'...'}
+					else 
+						p.product_description #{product.description}
 				.card__actions
+					a.button(href="/products/"+product.id) Details
 					form(action="/add-to-cart", method="post")
 						button(type="submit") Add to Cart
 		else 

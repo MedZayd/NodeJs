@@ -27,6 +27,7 @@
 	box-sizing: border-box;
 }
 
+.button,
 button {
 	font: inherit;
 	border: 1px solid #009688;
@@ -35,9 +36,12 @@ button {
 	border-radius: 3px;
 	cursor: pointer;
 	padding: 0.5rem;
+	text-decoration: none;
 }
 button:hover,
-button:active {
+button:active,
+.button:hover,
+.button:active {
 	background-color: #009688;
 	color: #ffe600;
 }
