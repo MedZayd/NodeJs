@@ -9,7 +9,7 @@
 			"request": "launch",
 			"name": "Debug App.js",
 			"skipFiles": ["<node_internals>/**"],
-			"program": "${workspaceFolder}\\ch6\\app.js",
+			"program": "${workspaceFolder}\\app.js",
 			"restart": true,
 			"runtimeExecutable": "nodemon",
 			"console": "integratedTerminal"
