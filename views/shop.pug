@@ -9,7 +9,7 @@ block main
 			each product in products
 				article.card.product-item
 					header.card__header
-						h1.product__title #{product}
+						h1.product__title #{product.title}
 					.card__image
 						img(src="https://picsum.photos/id/1073/200/200", alt="image from picsum photos")
 					.card__content
