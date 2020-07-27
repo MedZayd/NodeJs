@@ -1,0 +1,24 @@
+extends ../layouts/main-layout.pug
+
+block styles
+	link(rel="stylesheet", href="/css/card.css")
+	link(rel="stylesheet", href="/css/form.css")
+
+block main
+	.grid
+		each product in products
+			article.card.product-item
+				header.card__header
+					h1.product__title #{product.title}
+				.card__image
+					img(src=product.image, alt="image from placeimg.com")
+				.card__content
+					h2.product__price $#{product.price}
+					p.product_description #{product.description}
+				.card__actions
+					form(action="/admin/edit-product", method="post")
+						button Edit
+					form(action="/admin/delete-product", method="post")
+						button Delete
+		else 
+			h1 No products added !

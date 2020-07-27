@@ -1,0 +1,1 @@
+pug -O "{products: [{'title':'test','description':'test','image':'http://placeimg.com/200/200/tech','price':'19.99'}]}" index.pug
