@@ -1,20 +1,23 @@
 {
-  "name": "ch5",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
-  },
-  "author": "Mohamed Zayd Abad",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  },
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "pug": "^3.0.0"
-  }
+	"name": "ch5",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon app.js",
+		"pug": "pug"
+	},
+	"author": "Mohamed Zayd Abad",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^2.0.4"
+	},
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"mysql2": "^2.1.0",
+		"pug": "^3.0.0",
+		"uuid": "^8.3.0"
+	}
 }

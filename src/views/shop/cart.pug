@@ -1,0 +1,33 @@
+extends ../layouts/main-layout.pug
+
+block styles
+	link(rel="stylesheet", href="/css/cart.css")
+	link(rel="stylesheet", href="/css/form.css")
+
+block main
+	.container
+		h1.title My Cart
+		if products.length > 0
+			table
+				tr
+					th Product
+					th Price
+					th Quantity
+					th Total Price
+					th Actions
+				each product in products	
+					tr 
+						td #{product.title}
+						td $#{product.price}
+						td #{product.quantity}
+						td $#{product.price * product.quantity}
+						td.actions(style="text-align:right")
+							a.alink(href="/cart/increment-quantity/"+product.id) +
+							a.alink(href="/cart/decrement-quantity/"+product.id) -
+							a.alink(href="/cart/delete/"+product.id) Delete
+				tr
+					td(colspan="5", style="text-align:right") Total $#{totalPrice}
+		else 
+			p.msg Add new products
+			.link
+				a.alink(href="/products") Products
