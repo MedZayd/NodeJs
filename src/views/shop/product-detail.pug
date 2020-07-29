@@ -17,6 +17,5 @@ block main
 				.product__price
 					h2 $#{product.price}
 				.product__actions
-					form(action="/add-to-cart", method="post")
-						button(type="submit") Add to Cart
+					include ../includes/addToCart.pug
 					a.button(href="/products") Back to list

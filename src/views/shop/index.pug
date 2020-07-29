@@ -20,7 +20,6 @@ block main
 						p.product_description #{product.description}
 				.card__actions
 					a.button(href="/products/"+product.id) Details
-					form(action="/add-to-cart", method="post")
-						button(type="submit") Add to Cart
+					include ../includes/addToCart.pug
 		else 
 			h1 No products added !
