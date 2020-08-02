@@ -27,7 +27,9 @@ block main
 							a.alink(href="/cart/delete/"+product.id) Delete
 				tr
 					td(colspan="5", style="text-align:right") Total $#{totalPrice}
+			form(action="/create-order", method="POST")
+				button(type="submit") Order Now !
 		else 
 			p.msg Add new products
 			.link
-				a.alink(href="/products") Products
+				a.alink(href="/products") Explore Products

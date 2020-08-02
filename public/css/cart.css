@@ -73,3 +73,8 @@ table th {
 	background-color: #009688;
 	color: #ffe600;
 }
+
+.orderId {
+	vertical-align: baseline;
+	text-align: center;
+}
