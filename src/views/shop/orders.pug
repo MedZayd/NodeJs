@@ -1,4 +1,29 @@
 extends ../layouts/main-layout.pug
 
+block styles
+	link(rel="stylesheet", href="/css/cart.css")
+
 block main
-	h1 No Orders
+	.container
+		h1.title My Cart
+		if orders.length > 0
+			table
+				tr
+					th Order
+					th Products
+					th quantity
+				each order in orders	
+					tr
+						td(rowspan=order.products.length).orderId
+							strong ##{order.id}
+						td #{order.products[0].title}
+						td #{order.products[0].orderItem.quantity}
+					each product in  order.products.slice(1)
+						tr
+							td #{product.title} 	
+							td #{product.orderItem.quantity}
+							
+		else 
+			p.msg No Orders
+			.link
+				a.alink(href="/products") Explore Products

@@ -19,15 +19,17 @@ block main
 					tr 
 						td #{product.title}
 						td $#{product.price}
-						td #{product.quantity}
-						td $#{product.price * product.quantity}
+						td #{product.cartItem.quantity}
+						td $#{product.price * product.cartItem.quantity}
 						td.actions(style="text-align:right")
 							a.alink(href="/cart/increment-quantity/"+product.id) +
 							a.alink(href="/cart/decrement-quantity/"+product.id) -
 							a.alink(href="/cart/delete/"+product.id) Delete
 				tr
 					td(colspan="5", style="text-align:right") Total $#{totalPrice}
+			form(action="/create-order", method="POST")
+				button(type="submit") Order Now !
 		else 
 			p.msg Add new products
 			.link
-				a.alink(href="/products") Products
+				a.alink(href="/products") Explore Products
